@@ -1,3 +1,11 @@
 # MiniBlog-Django-Project--Python-Bootstrap
-# I have created Mini Blog with the help of Bootstrap and Python Django for Back-end. 
-Doing Django projects can help you considerably. You get practical experience and get to apply your knowledge of the framework. You’ll get to use a variety of functions while working on a project.
+
+=> Developed a Django application with blog functionality.
+=> Implemented a search functionality based on blog title, author name, and publication date.
+=> Created API endpoints for CRUD operations on BlogPost model using Django REST Framework (DRF).
+=> Integrated JWT authentication for secure user authentication and authorization in the API endpoints.
+=> Designed templates for rendering blog posts and search results.
+=> Implemented user authenticated that only authenticated users can make posts.
+=> Only the author of the post can change & delete the post. 
+=> Utilized efficient database queries and indexing techniques for improved performance.
+=> I have tried my best to improve the code and work with DRF.
