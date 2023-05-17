@@ -1,0 +1,15 @@
+our task is to create a Django application that allows authenticated users to perform CRUD operations on blog posts. Please implement the following functionalities:
+
+
+Done ==> Each blog post should contain the title, content, author, publication date, and tags.
+Done ==> Implement Django Rest Framework (DRF) for the backend and SQL for the database.
+Done ==> Every user/author should be able to view all other authors' blog posts.
+
+Done ==> Enable searching for blogs based on their title and author name, and publication date.
+
+Done ==> Use JWT for authentication and allow authors to update only their own blog posts.
+Done ==> Implement basic CRUD functionalities like creating, updating, retrieving, and deleting blog posts.
+Done ==> Use a SQL procedure for GET operations to retrieve blogs along with their corresponding author information.
+Done ==> Ensure the application meets professional-quality standards.
+
+- Create a trigger that updates the "last_blog" field in the User/Author table when a new blog post is created.

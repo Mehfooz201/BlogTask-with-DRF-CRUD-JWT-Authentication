@@ -1,0 +1,27 @@
+body{
+    background-color: rgb(41, 41, 41);
+    color: white;
+}
+
+.jumbo-col{
+    background-color: rgb(52, 52, 52);
+    color: rgb(201, 201, 201);
+}
+
+form, .cp, .cu{
+    color: rgb(177, 168, 168);
+}
+
+.form-control{
+    background-color: rgb(140, 140, 140);
+    border: none;
+}
+
+.form-control:focus{
+    background-color: rgb(164, 164, 164);
+    border: none;
+}
+
+p{
+    color: rgb(177, 168, 168);
+}

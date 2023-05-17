@@ -1,0 +1,54 @@
+{% extends 'blog/base.html' %}
+
+{% load static %}
+
+
+{% block content %}
+
+<div class="container">
+    <div class="row justify-content-center my-4">
+        {% if posts %}
+            <h4>Search Results</h4>
+            <hr>
+            
+            {% for post in posts %}
+
+                <div class="jumbotron jumbotron-fluid jumbo-col p-4 mb-4">
+                    <div class="container">
+                        <p>
+                            <a href="#" class='text-info text-decoration-none'>@{{post.host}}</a> |  <span>{{post.publication_date|timesince}}</span></p>
+                            
+                            {% if request.user == post.host %}
+                            
+                                <a href="{% url 'updatepost' post.id %}" class="btn btn-warning btn-sm">Edit</a>
+                                <form action="{% url 'deletepost' post.id %}" method="post" class="d-inline">
+                                    {% csrf_token %}
+                                    <input type="submit" class="btn btn-danger btn-sm" value="Delete">
+                                </form>
+                                
+                            {% endif %}
+                        
+                    <hr>
+                    <h4 class="display-5 fw-bold">{{post.title}}</h4>
+                    <p class="lead">{{post.content}}</p>
+
+                    <hr>
+                    <p class="lead">Tags : {{post.tags}}</p>
+                    
+                    </div>
+                </div>
+        
+            {% endfor %}
+            
+        {% else %}
+
+            <h4>Search result for <span class='fw-bold'>"{{query}}"</span> is not found. </h4>
+            <hr>
+
+        {% endif %}
+    </div>
+
+
+</div>
+
+{% endblock content %}

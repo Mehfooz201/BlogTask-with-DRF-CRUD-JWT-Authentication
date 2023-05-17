@@ -1,0 +1,30 @@
+{% extends 'blog/base.html' %}
+
+{% load static %}
+
+
+{% block content %}
+
+
+    <div class="col-sm-10">
+        <h3 class="text-white my-5">Update Post</h3>
+
+        <form action="" method="post" novalidate>
+            {% csrf_token %}
+
+            {{form.as_p}}
+
+            <input type="submit" class="btn btn-success btn-sm mb-5" value="Update">
+
+            <br>
+            
+
+
+        </form>
+       
+    </div>
+
+{% endblock content %}
+
+
+

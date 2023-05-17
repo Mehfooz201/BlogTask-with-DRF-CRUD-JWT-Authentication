@@ -1,0 +1,58 @@
+{% extends 'blog/base.html' %}
+
+{% load static %}
+
+{% block title %}
+    Home
+{% endblock title %}
+
+{% block content %}
+
+    <div class="col-sm-12 my-4">
+        
+        {% if user.is_authenticated %}
+            <h3 class="text-white my-4">Welcome, <span class="text-info">@{{request.user}}</span></h3> 
+        {% else %}
+        <h3 class="text-white my-4">Welcome, To Jinnah Tech Blog</span></h3>
+        {% endif %}
+
+        {% if user.is_authenticated %}
+          
+        <a href="{% url 'addpost' %}" class="btn btn-success mb-3">Add Post</a>
+        {% endif %}
+
+        {% for post in posts %}
+
+            <div class="jumbotron jumbotron-fluid jumbo-col p-4 mb-4">
+                <div class="container">
+                    <p>
+                        <a href="#" class='text-info text-decoration-none'>@{{post.host}}</a> |  <span>{{post.publication_date|timesince}}</span></p>
+                        
+                        {% if request.user == post.host %}
+                        
+                            <a href="{% url 'updatepost' post.id %}" class="btn btn-warning btn-sm">Edit</a>
+                            <form action="{% url 'deletepost' post.id %}" method="post" class="d-inline">
+                                {% csrf_token %}
+                                <input type="submit" class="btn btn-danger btn-sm" value="Delete">
+                            </form>
+                            
+                        {% endif %}
+                     
+                <hr>
+                <a href="{% url 'singlepost' post.id %}" class="text-decoration-none  text-white-50"><h4 class="display-5 fw-bold">{{post.title}}</h4></a>
+
+                <p class="lead my-4">{{post.content}}</p>
+
+                <hr>
+                <p class="lead">Tags : {{post.tags}}</p>
+                
+                </div>
+            </div>
+        
+        {% endfor %}
+    </div>
+
+{% endblock content %}
+
+
+

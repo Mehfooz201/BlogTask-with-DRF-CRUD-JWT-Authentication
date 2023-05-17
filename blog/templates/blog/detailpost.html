@@ -1,0 +1,47 @@
+{% extends 'blog/base.html' %}
+
+{% load static %}
+
+{% block title %}
+    Single Post
+{% endblock title %}
+
+{% block content %}
+
+    <div class="col-sm-12 my-4">
+        
+        
+
+       
+
+            <div class="jumbotron jumbotron-fluid jumbo-col p-4 mb-4">
+                <div class="container my-5">
+                    <p>
+                        <a href="#" class='text-info text-decoration-none'>@{{posts.host}}</a> |  <span>{{posts.publication_date|timesince}}</span></p>
+                        
+                        {% if request.user == posts.host %}
+                        
+                            <a href="{% url 'updatepost' posts.id %}" class="btn btn-warning btn-sm">Edit</a>
+                            <form action="{% url 'deletepost' posts.id %}" method="post" class="d-inline">
+                                {% csrf_token %}
+                                <input type="submit" class="btn btn-danger btn-sm" value="Delete">
+                            </form>
+                            
+                        {% endif %}
+                     
+                <hr>
+                <h4 class="display-5 fw-bold text-white-50" >{{posts.title}}</h4>
+                <p class="lead my-4">{{posts.content}}</p>
+
+                <hr>
+                <p class="lead">Tags : {{posts.tags}}</p>
+                
+                </div>
+            </div>
+        
+    </div>
+
+{% endblock content %}
+
+
+
