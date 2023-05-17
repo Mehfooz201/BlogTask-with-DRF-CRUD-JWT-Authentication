@@ -1,6 +1,7 @@
-# MiniBlog-Django-Project--Python-Bootstrap
+# Blog Task using DRF and JWT Authentication (Django -Python-Bootstrap)
 
 => Developed a Django application with blog functionality.
+<br>
 => Implemented a search functionality based on blog title, author name, and publication date.
 => Created API endpoints for CRUD operations on BlogPost model using Django REST Framework (DRF).
 => Integrated JWT authentication for secure user authentication and authorization in the API endpoints.
