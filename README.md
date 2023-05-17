@@ -1,5 +1,12 @@
 # Blog Task using DRF and JWT Authentication (Django -Python-Bootstrap)
 
+
+
+
+Uploading Blog task.mp4…
+
+
+
 => Developed a Django application with blog functionality.
 <br>
 => Implemented a search functionality based on blog title, author name, and publication date.<br>
