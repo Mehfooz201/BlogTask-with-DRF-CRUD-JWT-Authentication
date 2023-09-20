@@ -6,3 +6,5 @@ from .models import BlogPost
 @admin.register(BlogPost)
 class PostModelAdmin(admin.ModelAdmin):
     list_display= ['id', 'title', 'content']
+
+#edit
